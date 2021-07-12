@@ -1,3 +1,4 @@
+
 function changeTo(myImg)
 {
     var myNum = document.getElementById("num");
@@ -35,7 +36,7 @@ function Stop()
     {
         score = 100;
     }
-    else if(count1 == count2  || count2 == count3 || count3 == count1)
+    else if(count1 == count2  || count2 == count3 || count1 == count2)
     {
         score = 60;
     }
@@ -43,9 +44,9 @@ function Stop()
     {
         score = 0;
     }
-    game_conut++;
+    game_count++;
     sum_score += score;
-    $('#score').text('점수 : '+score+', 횟수 : '+game_conut+", 누적 점수 : "+sum_score);
+    $('#score').text('점수 : '+score+', 횟수 : '+game_count+", 누적 점수 : "+sum_score);
 
     clearTimeout(timerId);
 }
@@ -56,7 +57,7 @@ function Auto_change_img(count, id_value)
     
     str1 = count+".png";
     myNum1.src = str1;
-    
+    return count;
     
     
     // switch(count)
