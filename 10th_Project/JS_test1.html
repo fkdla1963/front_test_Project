@@ -4,98 +4,78 @@
         <title>함수 학습</title>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
         <script>
-            var count = 0, count1=0.0, count2=0.0, count3=0.0;
-            var score = 0.0, temp_atob=0.0, temp_btoc=0.0 , vv=0;
-            max_score = 100;
-            game_count = 0, sum_score = 0;
+            
             var timerId = null;
+            
             function Rand(min, max) {
                 min = Math.ceil(min);
                 max = Math.floor(max);
                 return Math.floor(Math.random() * (max - min)) + min;
             }
-            var count1_array = [];
-            function Start() {
-                // for(i = 1; i <= 6; i++)
-                // {   
-                    
-                //     if(count1_array.indexOf(Rand(1,11) === -1))
-                //     {
-                //         count1_array.push(Rand(1,11));
-                //     }
-                //     else
-                //     {
-                //         i--
-                //     }
-                // }
-
-                // for(i = 0; i <= 5; i++)
-                // {
-                //     Auto_change_img(count1_array[i],"num"+i)
-                // }
-                // count1 = Auto_change_img(Rand(1, 10),"num0");
-                // count2 = Auto_change_img(Rand(1, 10),"num1");
-                // count3 = Auto_change_img(Rand(1, 10),"num2");
-                // count4 = Auto_change_img(Rand(1, 10),"num3");
-                // count5 = Auto_change_img(Rand(1, 10),"num4");
-                // count6 = Auto_change_img(Rand(1, 10),"num5");
+            var count1_array = [1,2,3,4,5,6];
+            function Start() 
+            {
+               
                 for(i = 0; i < 6; i++)
                 {
-                    if(count1_array.indexOf(Rand(1, 10)) === -1)
-                    {
-                    count1_array.push(Rand(1, 10));
-                    }
-                    else
-                    {
-                        i--
-                    }    
-                    
+                    count1_array[i] = Rand(1,45);
                 }
-
-                count1 = Auto_change_img(count1_array[0],"num0");
+                view()
                 timerId = setTimeout(Start, 100);
             }
-            function Stop() {
-                if(count1 == count2 && count2 == count3)
-                {
-                    score = 100;
-                }
-                else if(count1 == count2 || count2 == count3 || count1 == count3)
-                {
-                    score = 60;
-                }
-                else{
-                    score = 0;
-                }
-                game_count++;
-                sum_score += score;
+            function Stop()  
+            {
+                sort();
                 
-                var count_array = []
-                $('#score').text('점수 : '+score+', 횟수 : '+game_count+", 누적 점수: "+sum_score);
-                for(i = 0; i <= 6; i++)
-                {   
-                    var r = Rand(0,10);
-                    if(count_array.indexOf(r) === -1)
-                    {
-                        count_array.push(r);
-                    }
-                    else
-                    {
-                        i--
-                    }
-                     
-                }
-                for(i = 0; i<= 6; i++)
-                {
-                    $('#num'+i).text('점수 : ' + count_array[i]);
-                }
-                
+                aaa();
+
+                sort();
+
+                view();
 
                 clearTimeout(timerId);
             }
+
+
+            function view()
+            {
+                for(i = 0; i < 6; i++)
+                {
+                    Auto_change_img(i, ("num"+i));
+                }
+            }
+            function sort()
+            {
+                for(i = 0; i < 6; i++)
+                {
+                    for(j = 0; j < (5-i); j++)
+                    {
+                        if(count1_array[j] > count1_array[j+1])
+                        {
+                            temp = count1_array[j];
+                            count1_array[j] = count1_array[j+1];
+                            count1_array[j+1] = temp;
+                        }
+                    }
+                }
+            }
+
+            function aaa()
+            {
+                for(i = 0; i < 5; i++)
+                {
+                    if(count1_array[i] == count1_array[i+1])
+                    {
+                        count1_array[i+1] = Rand(count1_array[i],45);
+                        i--
+                    }
+                    
+                }
+            }
+
             function Auto_change_img(count,id_value){                
                 var myNum = document.getElementById(id_value);
-                str = "ball_"+count+".png";
+                str = "ball_"+count1_array[count]+".png";
                 myNum.src = str;
                 return count;
             }
@@ -107,21 +87,13 @@
     </body>
     <div>
         
-        <img src="ball_1.png" width="300px" height="300px" id="num0">
-        <img src="ball_1.png" width="300px" height="300px" id="num1">
-        <img src="ball_1.png" width="300px" height="300px" id="num2">
-        <img src="ball_1.png" width="300px" height="300px" id="num3">
-        <img src="ball_1.png" width="300px" height="300px" id="num4">
-        <img src="ball_1.png" width="300px" height="300px" id="num5">
+        <img src="ball_1.png" width="150px" height="150px" id="num0">
+        <img src="ball_1.png" width="150px" height="150px" id="num1">
+        <img src="ball_1.png" width="150px" height="150px" id="num2">
+        <img src="ball_1.png" width="150px" height="150px" id="num3">
+        <img src="ball_1.png" width="150px" height="150px" id="num4">
+        <img src="ball_1.png" width="150px" height="150px" id="num5">
         
-
-        <p id="score">점수 : 0, 횟수 : 0, 누적 점수: 0</p>
-        <p id="num0">점수 : </p>
-        <p id="num1">점수 : </p>
-        <p id="num2">점수 : </p>
-        <p id="num3">점수 : </p>
-        <p id="num4">점수 : </p>
-        <p id="num5">점수 : </p>
         
     </div>
 </html>
