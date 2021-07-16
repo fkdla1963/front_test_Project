@@ -1,117 +1,76 @@
-.accordion {
-    width: 100%;
-    max-width: 1080px;
-    height: 250px;
-    overflow: hidden;
-    margin: 50px auto;
-  }
-  
-  .accordion ul {
-    width: 100%;
-    display: table;
-    table-layout: fixed;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .accordion ul li {
-    display: table-cell;
-    vertical-align: bottom;
+*{
+  margin:0;
+  padding:0;
+}
+body
+{
+  margin:0;
+  padding:0;
+}
+.hero.is-gradient {
+    background: #4776E6;
+    background: linear-gradient(to right, #8E54E9, #7F00FF);
+}
+            .hero.is-relative {
     position: relative;
-    width: 16.666%;
-    height: 250px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    transition: all 500ms ease;
-  }
-  
-  .accordion ul li div {
-    display: block;
-    overflow: hidden;
+}
+            #demo-canvas {
+    position: absolute;
+    bottom: 0;
     width: 100%;
-  }
-  
-  .accordion ul li div a {
-    display: block;
-    height: 250px;
-    width: 100%;
-    position: relative;
-    z-index: 3;
-    vertical-align: bottom;
-    padding: 15px 20px;
-    box-sizing: border-box;
-    color: #fff;
-    text-decoration: none;
-    font-family: Open Sans, sans-serif;
-    transition: all 200ms ease;
-  }
-  
-  .accordion ul li div a * {
-    opacity: 0;
-    margin: 0;
-    width: 100%;
-    text-overflow: ellipsis;
-    position: relative;
-    z-index: 5;
-    white-space: nowrap;
-    overflow: hidden;
-    -webkit-transform: translateX(-20px);
-    transform: translateX(-20px);
-    -webkit-transition: all 400ms ease;
-    transition: all 400ms ease;
-  }
-  
-  .accordion ul li div a h2 {
-    font-family: Montserrat, sans-serif;
-    text-overflow: clip;
-    font-size: 24px;
-    text-transform: uppercase;
-    margin-bottom: 2px;
-    top: 160px;
-  }
-  
-  .accordion ul li div a p {
-    top: 160px;
-    font-size: 13.5px;
-  }
-    .accordion ul li:nth-child(1) { background-image: url("1.jpg"); }
-
-    .accordion ul li:nth-child(2) { background-image: url("2.jpg"); }
-
-    .accordion ul li:nth-child(3) { background-image: url("3.jpg"); }
-
-    .accordion ul li:nth-child(4) { background-image: url("4.jpg"); }
-
-    .accordion ul li:nth-child(5) { background-image: url("5.jpg"); }
-
-    .accordion ul li:nth-child(6) { background-image: url("6.jpg"); }
-
-    .accordion ul:hover li { width: 8%; }
-
-.accordion ul:hover li:hover { width: 60%; }
-
-.accordion ul:hover li:hover a { background: rgba(0, 0, 0, 0.4); }
-
-.accordion ul:hover li:hover a * {
-  opacity: 1;
-  -webkit-transform: translateX(0);
-  transform: translateX(0);
+    height: 100%;
 }
 
-@media screen and (max-width: 600px) {
 
-    .accordion { height: auto; }
-    
-    .accordion ul li,
-    .accordion ul li:hover,
-    .accordion ul:hover li,
-    .accordion ul:hover li:hover {
-      position: relative;
-      display: table;
-      table-layout: fixed;
-      width: 100%;
-      -webkit-transition: none;
-      transition: none;
-    }
-    
-    }
+            .hero.is-slanted:before {
+    background: transparent url("http://localhost:16930/assets/images/bg/shapes/slant.png") no-repeat scroll 0 bottom/100% auto;
+    content: "";
+    height: 270px;
+    width: 100%;
+    z-index: 1 !important;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
+#main-landing-title {
+    position: relative;
+    top: -110px;
+    font-family: 'Nexa Bold', sans-serif !important;
+    color: #fff;
+}
+
+#main-landing-title h1 {
+    position: relative;
+    margin-bottom: 0 !important;
+    font-weight: 600;
+    text-transform: uppercase;
+  margin-top: 90px;
+}
+.has-text-centered {
+    text-align: center !important;
+}
+.light-text {
+    color: #fff !important;
+}
+
+.hero.is-halfheight .hero-body, .hero.is-fullheight .hero-body, .hero.is-fullheight-with-navbar .hero-body {
+    -ms-flex-align: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.hero-body {
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+
+.hero-body {
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    padding: 3rem 1.5rem;
+}
