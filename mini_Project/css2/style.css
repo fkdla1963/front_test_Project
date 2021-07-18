@@ -1,0 +1,76 @@
+*{
+  margin:0;
+  padding:0;
+}
+body
+{
+  margin:0;
+  padding:0;
+}
+.hero.is-gradient {
+    background: #4776E6;
+    background: linear-gradient(to right, #8E54E9, #7F00FF);
+}
+            .hero.is-relative {
+    position: relative;
+}
+            #demo-canvas {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+            .hero.is-slanted:before {
+    background: transparent url("http://localhost:16930/assets/images/bg/shapes/slant.png") no-repeat scroll 0 bottom/100% auto;
+    content: "";
+    height: 270px;
+    width: 100%;
+    z-index: 1 !important;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
+#main-landing-title {
+    position: relative;
+    top: -110px;
+    font-family: 'Nexa Bold', sans-serif !important;
+    color: #fff;
+}
+
+#main-landing-title h1 {
+    position: relative;
+    margin-bottom: 0 !important;
+    font-weight: 600;
+    text-transform: uppercase;
+  margin-top: 90px;
+}
+.has-text-centered {
+    text-align: center !important;
+}
+.light-text {
+    color: #fff !important;
+}
+
+.hero.is-halfheight .hero-body, .hero.is-fullheight .hero-body, .hero.is-fullheight-with-navbar .hero-body {
+    -ms-flex-align: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.hero-body {
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+
+.hero-body {
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    padding: 3rem 1.5rem;
+}
