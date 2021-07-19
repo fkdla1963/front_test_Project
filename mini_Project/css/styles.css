@@ -10868,46 +10868,102 @@ header.masthead {
   position: relative;
   background-color: #343a40;
   background: url("/img_test/giphy.gif") no-repeat center center;
-  background-size: cover;
+  background-size: 100% 150%;
   padding-top: 8rem;
   padding-bottom: 8rem;
 }
 
 header.masthead2 {
   position: relative;
-  background-color: #000000;
   background: url("/img_test/7c9b4b6ff870e8c8a338a2c9e215622a.gif") no-repeat center center;
-  background-size: cover;
-  padding-top: 25rem;
-  padding-bottom: 25rem;
+  background-color: #343a40;
+  background-size: 100% 130%;
+  padding-top: 12rem;
+  padding-bottom: 12rem;
 }
+
+header.masthead2::before{
+  content: "";
+  opacity: 0.5;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: #000;
+}
+
 
 header.masthead3 {
   position: relative;
-  background-color: #343a40;
-  background: url("/img_test/giphy.gif") no-repeat center center;
-  background-size: cover;
-  padding-top: 8rem;
-  padding-bottom: 8rem;
+  background-color: black;
+  background: url("/img_test/4545555.gif") no-repeat center center;
+  background-size: 100% 100%;
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+}
+
+header.masthead3::before{
+  content: "";
+  opacity: 0.8;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: #000;
+  opacity: 0.6;
+}
+
+header.masthead3_1 {
+  position: relative;
+  background-color: black;
+  background: url("/img_test/213316191000202.gif") no-repeat center center;
+  background-size: 100% 100%;
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+}
+
+header.masthead3_1::before{
+  content: "";
+  opacity: 0.8;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: #000;
+  opacity: 0.6;
 }
 
 header.masthead4 {
   position: relative;
   background-color: #343a40;
-  background: url("/img_test/giphy.gif") no-repeat center center;
-  background-size: cover;
-  padding-top: 8rem;
-  padding-bottom: 8rem;
+  background: url("/img_test/121wwee.gif") no-repeat center center;
+  background-size: 100% 100%;
+  padding-top: 12rem;
+  padding-bottom: 12rem;
 }
-header.masthead:before {
+header.masthead4:before {
   content: "";
   position: absolute;
-  background-color: #1c375e;
+  background-color: #000;
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
-  opacity: 0.5;
+  opacity: 0.6;
+}
+
+header.masthead:before {
+  content: "";
+  position: absolute;
+  background-color: #000;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
 }
 header.masthead h1, header.masthead .h1 {
   font-size: 2rem;
@@ -10923,10 +10979,10 @@ header.masthead h1, header.masthead .h1 {
 }
 
 .showcase .showcase-text {
-  padding: 3rem;
+  padding: 5rem;
 }
 .showcase .showcase-img {
-  min-height: 700px;
+  min-height: 400px;
   background-size: cover;
 }
 @media (min-width: 768px) {

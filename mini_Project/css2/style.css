@@ -8,13 +8,13 @@ body
   padding:0;
 }
 .hero.is-gradient {
-    background: #4776E6;
-    background: linear-gradient(to right, #8E54E9, #7F00FF);
+    background: #ffc7ee;
+    
 }
-            .hero.is-relative {
+.hero.is-relative {
     position: relative;
 }
-            #demo-canvas {
+#demo-canvas {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -22,7 +22,7 @@ body
 }
 
 
-            .hero.is-slanted:before {
+.hero.is-slanted:before {
     background: transparent url("http://localhost:16930/assets/images/bg/shapes/slant.png") no-repeat scroll 0 bottom/100% auto;
     content: "";
     height: 270px;
