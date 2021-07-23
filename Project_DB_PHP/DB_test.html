@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <title>DB테스트 입니다.</title>
+    <head>
+
+    </head>
+    <body>
+        <form action='./DB_test2.php' name='form1' method='post'>
+
+            <input type='hidden' name='id' value='test'> 
+            
+            <li>출발지역: <select name = 'f1' id = 'f1' >
+                            <option>인천</option>
+                            <option>김포</option>
+                            <option>부산</option>                            
+                         </select>
+
+            <li>도착지역: <select name = 'f2' id = 'f2' >
+                            <option>나리타</option>
+                            <option>하네다</option>
+                            <option>화성</option>                            
+                        </select>
+
+            <li>출발시간: <select name = 'f3' id = 'f3' >
+                            <option>07 : 00</option>
+                            <option>11 : 00</option>
+                            <option>18 : 00</option>                            
+                        </select>
+
+            <li>도착시간: <select name = 'f4' id = 'f4' >
+                            <option>09 : 00</option>
+                            <option>13 : 00</option>
+                            <option>20 : 00</option>                            
+                        </select>
+            
+            <li>비행기 편명: <select name = 'f5' id = 'f5' >
+                                <option>F15_RTX1080</option>
+                                <option>F18_RTX2080</option>
+                                <option>F32_RTX3080</option>                            
+                            </select>
+
+            <textarea name='memo' cols='100' rows='5'></textarea>
+            
+            <input type='submit' value='전 송'>
+            
+            </form>
+            
+            <p>ㅎㅇ : <button value="데이터베이스 이동" onclick="location.href='DB_show_test.php'"></p>
+                눌러봐 : <button id="button1" onclick="test1();">zz</button>
+            <div id='result'></div>
+
+            <script>
+                function printName()
+                {
+                    const name = document.getElementById('d_area').value;
+                    document.getElementById("result").innerText = name;
+                }
+
+                function test1()
+                {
+                    var a = [];
+
+                    var test1 = document.getElementById('f1').value;
+                    var test2 = document.getElementById('f2').value;
+                    var test3 = document.getElementById('f3').value;
+                    var test4 = document.getElementById('f4').value;
+                    var test5 = document.getElementById('f5').value;
+                    
+                    a.push(test1);
+                    a.push(test2);
+                    a.push(test3);
+                    a.push(test4);
+                    a.push(test5);    
+                
+                    location.href = './DB_test2.php';
+                    
+                
+                }
+            </script>
+    </body>
+</html>
