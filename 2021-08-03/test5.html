@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Document</title>
+    <style>
+        /*화면에 랜더링할 때 사용할 제목 색상을 파랑색으로 정의*/
+        .blue_style { color: blue }
+        .yellow_style { color:hotpink }
+        .red_style { color: red }
+        .green_style { color: green }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <!-- v-bind 안에도 자바스크리트 사용 가능하므로 변수와 문단을 연결하여 클래스이름을 완성하여 연결함 -->
+        <h1 v-bind:class="sColorName + '_style'">{{ shello }}</h1>
+        <!-- 클론(;) 앞은 생략 가능 -->
+        <input v-model:value = "shello">
+    </div>
+    <script>
+        var Quotation = new Array();
+
+        Quotation[0] = "우";
+        Quotation[1] = "철";
+        Quotation[2] = "♥";
+        Quotation[3] = "문";
+
+        var qq = ["blue", "yellow", "red", "green"];
+
+        new Vue({
+            el: '#main',
+            data: {
+                //DATE 객체의 getFullYear() 메소드로 올해 년도 문장을 준비함
+                sColorName: qq[Rand(0,4)],
+                shello: Quotation[Rand(0,4)]
+                
+            }
+        });
+        function Rand(min, max){
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random()* (max - min))+min;
+        }
+    </script>
+</body>
+</html>
