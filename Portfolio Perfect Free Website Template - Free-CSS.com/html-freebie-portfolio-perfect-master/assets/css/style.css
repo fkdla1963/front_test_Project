@@ -341,7 +341,7 @@ html, body {
 }
 
 .section-services .container {
-    padding: 120px 100px;
+    padding: 100px 15px;
     position: relative;
     background-color: #fff;
     box-shadow: 0px 0px 40px 8px rgba(0, 0, 0, 0.2);
@@ -614,3 +614,112 @@ a.icon-up-bg:hover {color: #212121;}
     margin-left: -15px;
     margin-bottom: 0px;
 }
+
+:root {
+    --direction: ltr;
+    --direction-alt: rtl;
+  }
+  
+  [dir="rtl"] {
+    --direction: rtl;
+    --direction-alt: ltr;
+  }
+  
+  .article {
+    display: grid;
+    align-items: start;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: var(--space-md);
+  }
+  
+  /* Alternate direction */
+  .article:nth-child(even) {
+    direction: var(--direction-alt);
+  }
+  
+  /* Revert direction on child elements */
+  .article > * {
+    direction: var(--direction);
+  }
+  
+  /* Other page styling */
+  
+  body {
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 8rem;
+  
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+  
+  .section-wrap {
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    padding-inline-start: var(--space-md);
+    padding-inline-end: var(--space-md);
+    max-inline-size: 1200px;
+  }
+  
+  .header {
+    margin-block-end: var(--space-lg);
+    padding-block-start: var(--space-sm);
+    padding-block-end: var(--space-sm);
+    /* background: papayawhip; */
+    font-size: 1rem;
+  }
+  
+  .main > * + * {
+    margin-block-start: var(--space-lg);
+    margin-block-end: var(--space-lg);
+  }
+  
+  .content > * + * {
+    margin-block-start: var(--space-sm);
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+  
+  .headline {
+    font-weight: bold;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+  
+  .image-wrap {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 15 / 9;
+    inline-size: 100%;
+    border-radius: 3rem;
+  }
+  
+  .image-wrap img {
+    position: absolute;
+    object-fit: cover;
+    inline-size: 100%;
+  }
+  
+  @supports not (aspect-ratio: 16 / 9) {
+    .image-wrap::before {
+      float: left;
+      padding-top: 56.25%;
+      content: "";
+    }
+  
+    .image-wrap::after {
+      display: block;
+      content: "";
+      clear: both;
+    }
+  }
+
+  p {
+     font-size: 18px; 
+     text-align: left;
+  }
+  
