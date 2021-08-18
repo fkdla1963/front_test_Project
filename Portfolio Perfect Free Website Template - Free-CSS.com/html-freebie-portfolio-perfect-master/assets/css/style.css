@@ -268,7 +268,7 @@ html, body {
 /* site-section */
 .site-section {
    padding-top: 150px;
-   padding-bottom: 320px;
+   padding-bottom: 200px;
 }
 
 .site-section h2,
@@ -757,10 +757,10 @@ a.icon-up-bg:hover {color: #212121;}
     width: 900px;
     height: 980px;
     border-radius: 1em;
-    margin-left: 135px;
+    margin-left: 140px;
     margin-top: -145px;
-    position: absolute;
-    box-shadow: 0px 0px 40px 8px rgb(72 0 0 / 30%);
+    position: relative;
+    box-shadow: 0px 0px 40px 8px rgb(0 0 0 / 30%);
 
   }
 
