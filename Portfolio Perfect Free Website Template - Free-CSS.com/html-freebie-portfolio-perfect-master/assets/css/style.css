@@ -734,144 +734,201 @@ a.icon-up-bg:hover {color: #212121;}
     margin: 0 auto;
   }
 
-  .iphone-body {
-    position: relative;
-    background: silver;
-    height: 640px;
-    width: 316px;
-    border-radius: 30px;
-  }
+  /* TIMELINE
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-  .iphone-body:before {
+.timeline ul {
+    background: #fff;
+    padding: 50px 0;
+  }
+  
+  .timeline ul li {
+    list-style-type: none;
+    position: relative;
+    width: 6px;
+    margin: 0 auto;
+    padding-top: 50px;
+    background:cornsilk;
+  }
+  
+  .timeline ul li::after {
     content: "";
     position: absolute;
-    background: white;
-    height: 500px;
-    width: 290px;
-    border-radius: 5px;
-    margin: 70px 0 0 13px;
-  }
-
-  .i_body {
-    background-color: silver;
-    width: 900px;
-    height: 980px;
-    border-radius: 1em;
-    margin-left: 140px;
-    margin-top: -145px;
-    position: relative;
-    box-shadow: 0px 0px 40px 8px rgb(0 0 0 / 30%);
-
-  }
-
-  .i_body2 {
-    background-color: white;
-    width: 830px;
-    height: 850px;
-    border-radius: 0em;
-    margin-left: 30px;
-    margin-top: 65px;
-    position: absolute;
-    border: 2px solid black;
-    overflow-y: auto;
-    -ms-overflow-style: none;
-  }
-  
-  .i_body::-webkit-scrollbar {
-    display:none; 
-}
-
-  .chat {
-    width: 268px;
-    border: solid 0px #EEE;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
-  .messages {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .message {
-    border-radius: 20px;
-    padding: 8px 15px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    display: inline-block;
-  }
-  
-  .yours {
-    align-items: flex-start;
-  }
-  
-  .yours .message {
-    margin-right: 25%;
-    background-color: #eee;
-    position: relative;
-  }
-  
-  .yours .message.last:before {
-    content: "";
-    position: absolute;
-    z-index: 0;
+    left: 50%;
     bottom: 0;
-    left: -7px;
-    height: 20px;
-    width: 20px;
-    background: #eee;
-    border-bottom-right-radius: 15px;
-  }
-  .yours .message.last:after {
-    content: "";
-    position: absolute;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: inherit;
     z-index: 1;
-    bottom: 0;
-    left: -10px;
-    width: 10px;
-    height: 20px;
-    background: white;
-    border-bottom-right-radius: 10px;
   }
   
-  .mine {
-    align-items: flex-end;
-  }
-  
-  .mine .message {
-    color: white;
-    margin-left: 25%;
-    background: linear-gradient(to bottom, #00D0EA 0%, #0085D1 100%);
-    background-attachment: fixed;
+  .timeline ul li div {
     position: relative;
+    bottom: 0;
+    width: 400px;
+    padding: 15px;
+    background: #fff;
   }
   
-  .mine .message.last:before {
+  .timeline ul li div::before {
     content: "";
     position: absolute;
-    z-index: 0;
-    bottom: 0;
-    right: -8px;
-    height: 20px;
-    width: 20px;
-    background: linear-gradient(to bottom, #00D0EA 0%, #0085D1 100%);
-    background-attachment: fixed;
-    border-bottom-left-radius: 15px;
+    bottom: 7px;
+    width: 0;
+    height: 0;
+    border-style: solid;
   }
   
-  .mine .message.last:after {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    bottom: 0;
-    right: -10px;
-    width: 10px;
-    height: 20px;
-    background: white;
-    border-bottom-left-radius: 10px;
+  .timeline ul li:nth-child(odd) div {
+    left: 45px;
   }
-
+  
+  .timeline ul li:nth-child(odd) div::before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent #f45b69 transparent transparent;
+  }
+  
+  .timeline ul li:nth-child(even) div {
+    left: -439px;
+  }
+  
+  .timeline ul li:nth-child(even) div::before {
+    right: -15px;
+    border-width: 8px 0 8px 16px;
+    border-color: transparent transparent transparent #f45b69;
+  }
+  
+  time {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  
+  /* EFFECTS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  
+  .timeline ul li::after {
+    transition: background 0.5s ease-in-out;
+  }
+  
+  .timeline ul li.in-view::after {
+    background: #f45b69;
+  }
+  
+  .timeline ul li div {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .timeline ul li:nth-child(odd) div {
+    transform: translate3d(200px, 0, 0);
+  }
+  
+  .timeline ul li:nth-child(even) div {
+    transform: translate3d(-200px, 0, 0);
+  }
+  
+  .timeline ul li.in-view div {
+    transform: none;
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  
+  /* GENERAL MEDIA QUERIES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  
+  @media screen and (max-width: 900px) {
+    .timeline ul li div {
+      width: 250px;
+    }
+    .timeline ul li:nth-child(even) div {
+      left: -289px;
+      /*250+45-6*/
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .timeline ul li {
+      margin-left: 20px;
+    }
+    .timeline ul li div {
+      width: calc(100vw - 91px);
+    }
+    .timeline ul li:nth-child(even) div {
+      left: 45px;
+    }
+    .timeline ul li:nth-child(even) div::before {
+      left: -15px;
+      border-width: 8px 16px 8px 0;
+      border-color: transparent #f45b69 transparent transparent;
+    }
+  }
+  
+  
+  /* EXTRA/CLIP PATH STYLES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .timeline-clippy ul li::after {
+    width: 40px;
+    height: 40px;
+    border-radius: 0;
+  }
+  
+  .timeline-rhombus ul li::after {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+  
+  .timeline-rhombus ul li div::before {
+    bottom: 12px;
+  }
+  
+  .timeline-star ul li::after {
+    clip-path: polygon(
+      50% 0%,
+      61% 35%,
+      98% 35%,
+      68% 57%,
+      79% 91%,
+      50% 70%,
+      21% 91%,
+      32% 57%,
+      2% 35%,
+      39% 35%
+    );
+  }
+  
+  .timeline-heptagon ul li::after {
+    clip-path: polygon(
+      50% 0%,
+      90% 20%,
+      100% 60%,
+      75% 100%,
+      25% 100%,
+      0% 60%,
+      10% 20%
+    );
+  }
+  
+  .timeline-infinite ul li::after {
+    animation: scaleAnimation 2s infinite;
+  }
+  
+  @keyframes scaleAnimation {
+    0% {
+      transform: translateX(-50%) scale(1);
+    }
+    50% {
+      transform: translateX(-50%) scale(1.25);
+    }
+    100% {
+      transform: translateX(-50%) scale(1);
+    }
+  }
+  
   
